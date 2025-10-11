@@ -22,8 +22,8 @@ app.use((err, req, res, next) => {
   });
 });
 app.get('/', (req, res) => res.send('Hello from Express on Vercel!'));
-app.use(`/${folderName}`, express.static(assetsUrl));
-app.use(express.static(path.resolve(assetsUrl, './', folderName)));
+app.use(`/assets`, express.static(assetsUrl));
+// app.use(express.static(path.resolve(assetsUrl, './', folderName)));
 
 app.use('/api', api);
 
