@@ -21,6 +21,6 @@ api.post('/images/upload', catchAsync(async (req, res) => {
 api.get('', UserController.get)
 api.post('/register', AuthVerify, UserController.register)
 api.post('/login', UserController.login)
-api.get('/profile', AuthVerify, UserController.profile) 
+api.get('/profile', AuthVerify, UserController.profile)  
 
 export default api;
