@@ -1,7 +1,7 @@
 {
   "name": "society-node",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "Api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon routes/Api.js",
