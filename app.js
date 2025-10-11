@@ -6,7 +6,7 @@ import { assetsUrl, folderName } from "./Config.js";
 import path from "path";
 
 const app = express();
-const port = 2003;
+const port = process.env.PORT
 const DATABASE_URL = process.env.DATABASE_URL
 
 connectDB(DATABASE_URL);
