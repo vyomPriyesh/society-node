@@ -5,13 +5,8 @@
     { "src": "assets/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    }
+   { "src": "/assets/(.*)", "dest": "/app.js" },
+    { "src": "/api/(.*)", "dest": "/app.js" },
+    { "src": "/(.*)", "dest": "/app.js" }
   ]
 }
