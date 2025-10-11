@@ -2,6 +2,8 @@ import express from "express";
 import cors from 'cors'
 import connectDB from "./db/Connectdb.js";
 import api from "./routes/Api.js";
+import { assetsUrl, folderName } from "./Config.js";
+import path from "path";
 
 const app = express();
 const port = 2003;
@@ -19,6 +21,9 @@ app.use((err, req, res, next) => {
     error: "Internal server error",
   });
 });
+
+app.use(`/${folderName}`, express.static(assetsUrl));
+// app.use(express.static(path.resolve(assetsUrl, './', folderName)));
 
 app.use('/api', api);
 
