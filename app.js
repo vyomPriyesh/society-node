@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors'
 // import connectDB from "./db/Connectdb.js";
-// import api from "./routes/Api.js";
+import api from "./routes/Api.js";
 // import { assetsUrl, folderName } from "./Config.js";
 import path from "path";
 
@@ -25,7 +25,7 @@ app.get('/', (req, res) => res.send('Hello from Express on Vercel!'));
 // app.use(`/${folderName}`, express.static(assetsUrl));
 // app.use(express.static(path.resolve(assetsUrl, './', folderName)));
 
-// app.use('/api', api);
+app.use('/api', api);
 
 // app.listen(port, () => {
 //     console.log(`Example app listening at http://localhost:${port}`);
