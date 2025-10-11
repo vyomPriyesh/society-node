@@ -30,3 +30,5 @@ app.get('/', (req, res) => res.send('Hello from Express on Vercel!'));
 // app.listen(port, () => {
 //     console.log(`Example app listening at http://localhost:${port}`);
 // });
+
+export default app
