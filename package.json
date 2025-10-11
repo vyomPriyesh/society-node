@@ -1,11 +1,11 @@
 {
   "name": "society-node",
   "version": "1.0.0",
-  "main": "Api.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon routes/Api.js",
-    "dev": "nodemon routes/Api.js"
+    "start": "nodemon src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
