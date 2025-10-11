@@ -21,14 +21,14 @@ app.use((err, req, res, next) => {
     error: "Internal server error",
   });
 });
-
+app.get('/', (req, res) => res.send('Hello from Express on Vercel!'));
 app.use(`/${folderName}`, express.static(assetsUrl));
 // app.use(express.static(path.resolve(assetsUrl, './', folderName)));
 
 app.use('/api', api);
 
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});
 
-export default app
+// export default app
