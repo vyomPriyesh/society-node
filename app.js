@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT
 const DATABASE_URL = process.env.DATABASE_URL
 
-connectDB(DATABASE_URL);
+// connectDB(DATABASE_URL);
 
 app.use(express.json());
 app.use(cors());
