@@ -1,8 +1,8 @@
 import express from "express";
 import cors from 'cors'
-import connectDB from "./db/Connectdb.js";
-import api from "./routes/Api.js";
-import { assetsUrl, folderName } from "./Config.js";
+// import connectDB from "./db/Connectdb.js";
+// import api from "./routes/Api.js";
+// import { assetsUrl, folderName } from "./Config.js";
 import path from "path";
 
 const app = express();
