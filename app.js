@@ -11,8 +11,8 @@ const DATABASE_URL = process.env.DATABASE_URL
 
 // connectDB(DATABASE_URL);
 
-app.use(express.json());
-app.use(cors());
+// app.use(express.json());
+// app.use(cors());
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
