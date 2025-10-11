@@ -27,8 +27,8 @@ app.use(express.static(path.resolve(assetsUrl, './', folderName)));
 
 app.use('/api', api);
 
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});
 
-export default app
+// export default app
