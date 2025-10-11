@@ -3,9 +3,10 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import { assetsUrl ,folderName} from "../Config.js";
+import os from 'os';
 
-
-const uploadPath = path.resolve(assetsUrl, '../', folderName);
+// const uploadPath = path.resolve(assetsUrl, '../', folderName);
+const uploadPath = path.join(os.tmpdir(), folderName);
 
 // Ensure the assets folder exists
 if (!fs.existsSync(uploadPath)) {
