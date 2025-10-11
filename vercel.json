@@ -6,13 +6,13 @@
       "use": "@vercel/node"
     },
     {
-      "src": "assets/**/*",
+      "src": "images/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/assets/(.*)",
+      "src": "/images/(.*)",
       "dest": "/app.js"
     },
     {
