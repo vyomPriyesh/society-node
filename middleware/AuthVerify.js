@@ -16,8 +16,11 @@ const AuthVerify = async (req, res, next) => {
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-        const user = await Users.findById({ _id: decoded.id, token: { $in: token } }).select("-password -login_devices")
-
+        const user = await Users.findOne({ _id: decoded.id, login_devices: { $in: token } }).select("-password -login_devices")
+         if (!user) {
+            return sendResponse(res, 422, 'User Not Found', false)
+        }
+        user.current_token = token
         req.user = user; // Contains payload like user ID, roles, etc.
         next();
 

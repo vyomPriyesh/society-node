@@ -48,9 +48,25 @@ class UserController {
         return sendResponse(res, 200, 'Profile Found', true, user)
     })
 
-    static get = catchAsync(async (req, res) => {
+    static updateProfile = catchAsync(async (req, res) => {
 
-        return sendResponse(res, 200, 'get', true)
+        const data = req.body
+        const id = req.user._id
+
+        const update = await Users.findByIdAndUpdate(id, data, { new: true })
+
+        return sendResponse(res, 200, 'Updated', true, update)
+
+    })
+
+    static logout = catchAsync(async (req, res) => {
+
+        const id = req.user._id
+        const token = req.user.current_token
+
+        await Users.findByIdAndUpdate(id, { $pull: { login_devices: token } })
+
+        return sendResponse(res, 200, 'Logout SuccessFully', true, token)
     })
 }
 
