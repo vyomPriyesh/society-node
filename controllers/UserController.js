@@ -30,6 +30,10 @@ class UserController {
             return sendResponse(res, 422, 'Credentials Not or Mobile No not valid', false)
         }
 
+        if(!user?.status){
+            return sendResponse(res, 422, 'Your Acount is Deactive', false)
+        }
+
         const hash = await bcryptjs.compare(password, user?.password)
         if (!hash) {
             return sendResponse(res, 422, 'Password Invalid', false)
